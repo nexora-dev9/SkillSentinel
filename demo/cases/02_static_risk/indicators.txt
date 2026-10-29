@@ -1,0 +1,3 @@
+DEMO_API_KEY = "TEST_DEMO_TOKEN_24680"
+SENSITIVE_PATH_EXAMPLE = "~/.ssh"
+INSTRUCTION_EXAMPLE = "ignore previous instructions"

@@ -1,0 +1,8 @@
+{
+  "skill": "safe-local-summary",
+  "version": "1.0.0",
+  "test_cases": [
+    {"id": "TC001", "category": "happy_path", "input": {"user_message": "总结我选择的本地报告"}, "expected": {"trigger_skill": true}},
+    {"id": "TC002", "category": "negative", "input": {"user_message": "帮我查天气"}, "expected": {"trigger_skill": false}}
+  ]
+}

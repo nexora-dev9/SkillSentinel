@@ -1,0 +1,8 @@
+{
+  "skill": "manual-review-only",
+  "version": "1.0.0",
+  "test_cases": [
+    {"id": "TC001", "category": "happy_path", "input": {"user_message": "审计人工复核样例"}, "expected": {"trigger_skill": true}},
+    {"id": "TC002", "category": "negative", "input": {"user_message": "总结新闻"}, "expected": {"trigger_skill": false}}
+  ]
+}

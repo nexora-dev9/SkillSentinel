@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "01_safe_local_summary",
+      "source": "demo/cases/01_safe_local_summary",
+      "expected_ids": [],
+      "semantic_expectation": "用途与能力无明显冲突；不得声称绝对安全",
+      "repair_expected": false
+    },
+    {
+      "id": "02_static_risk",
+      "source": "demo/cases/02_static_risk",
+      "expected_ids": ["SEC001", "FS001", "INS001", "SEM001"],
+      "semantic_expectation": "静态证据明显，但需结合惰性测试语境人工复核",
+      "repair_expected": false
+    },
+    {
+      "id": "03_purpose_mismatch",
+      "source": "demo/cases/03_purpose_mismatch",
+      "expected_ids": ["FS001", "NET001", "OUT001", "SEM001"],
+      "semantic_expectation": "声明仅本地处理，但能力样式明显超出用途，应判定用途—能力不一致或至少暂缓安装",
+      "repair_expected": false
+    },
+    {
+      "id": "04_auto_repairable",
+      "source": "demo/cases/04_auto_repairable",
+      "expected_ids": ["NET001", "OUT001", "TST001", "HITL001", "RES001", "SEM001"],
+      "semantic_expectation": "先保留网络/外发人工复核，同时允许补齐三项确定性质量/安全约束",
+      "repair_expected": true
+    },
+    {
+      "id": "05_manual_only",
+      "source": "demo/cases/05_manual_only",
+      "expected_ids": ["SEC001", "CAP001", "SEM001"],
+      "semantic_expectation": "高风险能力样式只能人工决定，不应生成自动修改",
+      "repair_expected": false
+    },
+    {
+      "id": "06_mcp_config",
+      "source": "demo/cases/06_mcp_config/mcp.json",
+      "expected_ids": ["SEC001", "MCP001", "SEM001"],
+      "semantic_expectation": "确认 MCP 本地进程启动与凭据配置是否必要；MVP audit-only",
+      "repair_expected": false
+    }
+  ]
+}

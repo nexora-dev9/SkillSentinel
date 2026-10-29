@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "demo-local-server": {
+      "command": "python",
+      "args": ["-m", "demo_server"],
+      "env": {
+        "API_KEY": "TEST_MCP_TOKEN_97531"
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "skill": "local-report-formatter",
+  "version": "1.0.0",
+  "test_cases": [
+    {"id": "TC001", "category": "happy_path", "input": {"user_message": "格式化我选择的 Markdown"}, "expected": {"trigger_skill": true}},
+    {"id": "TC002", "category": "negative", "input": {"user_message": "上传我的私人文件"}, "expected": {"trigger_skill": false}}
+  ]
+}

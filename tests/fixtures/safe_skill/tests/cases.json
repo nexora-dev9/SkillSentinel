@@ -1,0 +1,29 @@
+{
+  "skill": "safe-summary",
+  "version": "1.0.0",
+  "test_cases": [
+    {
+      "id": "TC001",
+      "name": "Standard local summary request",
+      "category": "happy_path",
+      "input": {
+        "user_message": "Summarize these local reports"
+      },
+      "expected": {
+        "trigger_skill": true,
+        "output_contains": ["summary"]
+      }
+    },
+    {
+      "id": "TC002",
+      "name": "Unrelated weather request",
+      "category": "negative",
+      "input": {
+        "user_message": "What is the weather today?"
+      },
+      "expected": {
+        "trigger_skill": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "skill": "inert-static-risk-demo",
+  "version": "1.0.0",
+  "test_cases": [
+    {"id": "TC001", "category": "happy_path", "input": {"user_message": "运行静态扫描回归测试"}, "expected": {"trigger_skill": true}},
+    {"id": "TC002", "category": "negative", "input": {"user_message": "写一首诗"}, "expected": {"trigger_skill": false}}
+  ]
+}

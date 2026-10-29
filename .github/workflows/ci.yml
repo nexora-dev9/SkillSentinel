@@ -1,0 +1,37 @@
+name: Test and package
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.10', '3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install standalone package
+        run: python -m pip install .
+      - name: Verify installed entrypoint
+        run: skillsentinel --version
+      - name: Regression tests
+        run: python tools/verify.py
+      - name: Static paired evaluation
+        run: python tools/evaluate_pairs.py --output-dir artifacts/ci_pairs
+      - name: Six-class demo
+        run: python demo/run_validation.py --output-dir artifacts/ci_demo
+      - name: Build portable releases
+        run: python tools/build_release.py
