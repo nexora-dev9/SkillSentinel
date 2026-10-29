@@ -14,7 +14,7 @@ from skill.build_skill import build  # noqa: E402
 
 
 def source_files() -> list[Path]:
-    names = ["README.md", "LICENSE", "SECURITY.md", "CONTRIBUTING.md", "CHANGELOG.md", "pyproject.toml", ".gitignore",
+    names = ["README.md", "README.zh-CN.md", "LICENSE", "SECURITY.md", "CONTRIBUTING.md", "CHANGELOG.md", "pyproject.toml", ".gitignore",
              "demo/README.md", "demo/VALIDATION_MATRIX.json", "demo/run_validation.py"]
     files = [ROOT / name for name in names]
     for directory in ("engine", "skill", "tests", "demo/cases", "evaluation", "tools", ".github"):
